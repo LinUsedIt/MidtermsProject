@@ -44,8 +44,8 @@
 
         <!-- Image of how compression looks -->
         <figure class="text-center">
-            <img class="img-fluid" src="assets/images/Compression%20Visualization.png" alt="Diagram visualizing how compression works" width="620"
-                height="322">
+            <img class="img-fluid" src="assets/images/Compression%20Visualization.png"
+                alt="Diagram visualizing how compression works" width="620" height="322">
             <figcaption class="image-label">
                 Image of a Compression Visualization
             </figcaption>
@@ -54,11 +54,14 @@
         <section>
             <h2 class="section-title">What is Compression?</h2>
             <p class="content-text">
-                Compression is the process of reducing the size of a file or a group of files to take up less storage space. It uses algorithms to encode them more efficiently and smaller while not losing their essential content. Through compression, it makes sharing files, especially large ones, easier.</p>
+                Compression is the process of reducing the size of a file or a group of files to take up less storage
+                space. It uses algorithms to encode them more efficiently and smaller while not losing their essential
+                content. Through compression, it makes sharing files, especially large ones, easier.</p>
             <p class="content-text">
                 Some common compression formats include .zip, .rar, and .jpeg.</p>
             <p class="content-text">
-                While compression can make files smaller, compressing it too much can cause the file quality, especially audio, to lessen.
+                While compression can make files smaller, compressing it too much can cause the file quality, especially
+                audio, to lessen.
             </p>
         </section>
 
@@ -67,9 +70,13 @@
         <section>
             <h2 class="section-title">Sample Compression</h2>
             <p class="content-text">
-                Here are 3 sample audio files. The first is an uncompressed .wav file, the second is a compressed .mp3 file, and the third is a super compressed .mp3 file. Try playing and downloading them. Notice how their file sizes and audio quality are different.</p>
+                Here are 3 sample audio files that play the same music. The first sample is the orginal uncompressed
+                .wav audio file. The second is a compressed .mp3 version of the first, compressed at a 32kbps. The last
+                is an even more compressed .mp3 file, compressed at a 8kbps. Notice how the audio quality detoriates at
+                each level of compression, while the file size decreases.</p>
             <p class="content-text">
-                Try also downloading the .zip file that contains the 3 sample audio files. Notice how the zip file is smaller than the 3 audio files combined.
+                Try also downloading the .zip file that contains the 3 sample audio files. Notice how the zip file is
+                smaller than the 3 audio files combined.
             </p>
             <div class="table-responsive">
                 <table class="table audio-table text-center align-middle">
@@ -94,7 +101,7 @@
                             <td>5.49 MB</td>
                         </tr>
                         <tr>
-                            <th scope="row">Audio 2: Compressed (.mp3)</th>
+                            <th scope="row">Audio 2: Compressed at 32kbps (.mp3)</th>
                             <td>
                                 <audio controls preload="metadata">
                                     <source src="assets/audio/Compressed%20Jazz.mp3" type="audio/mpeg">
@@ -105,19 +112,21 @@
                             <td>235.2 KB</td>
                         </tr>
                         <tr>
-                            <th scope="row">Audio 3: Super Compressed (.mp3)</th>
+                            <th scope="row">Audio 3: Compressed at 8kbps (.mp3)</th>
                             <td>
                                 <audio controls preload="metadata">
                                     <source src="assets/audio/Super%20Compressed%20Jazz.mp3" type="audio/mpeg">
                                     Your browser does not support the audio element.
                                 </audio>
-                                <p><a href="assets/audio/Super%20Compressed%20Jazz.mp3" download>Download Audio 3</a></p>
+                                <p><a href="assets/audio/Super%20Compressed%20Jazz.mp3" download>Download Audio 3</a>
+                                </p>
                             </td>
                             <td>59.2 KB</td>
                         </tr>
                         <tr>
                             <th scope="row">Zip of Audio 1, 2 and 3</th>
-                            <td><a href="assets/audio/Zip%20Folder%20of%20Audio%20Samples.zip" download>Download Zip</a></td>
+                            <td><a href="assets/audio/Zip%20Folder%20of%20Audio%20Samples.zip" download>Download Zip</a>
+                            </td>
                             <td>5.43 MB (the 3 files separately: 5.78 MB)</td>
                         </tr>
                     </tbody>
@@ -130,34 +139,44 @@
             <h2 class="section-title">RLE Algorithm</h2>
             <h3 class="section-subtitle">What is RLE?</h3>
             <p class="content-text">
-                Run Length Encoding, or RLE, is a type of compression algorithm. It is usually used for storing data with long sequences of repeated characters.</p>
+                Run Length Encoding, or RLE, is a type of compression algorithm. It is usually used for storing data
+                with long sequences of repeated characters.</p>
 
             <h3 class="section-subtitle">How to do RLE?</h3>
             <figure class="text-center">
                 <img class="img-fluid" src="assets/images/Pixel%20Image%20of%20a%20Sunny%20Landscape.png"
-                    alt="Pixel image of a sunny landscape: an 8 by 8 grid with a blue sky, a yellow sun, white clouds, and green grass" width="507"
-                    height="527" loading="lazy">
+                    alt="Pixel image of a sunny landscape: an 8 by 8 grid with a blue sky, a yellow sun, white clouds, and green grass"
+                    width="507" height="527" loading="lazy">
                 <figcaption class="image-label">Pixel Image of a Sunny Landscape</figcaption>
             </figure>
             <p class="content-text">
-                To encode an image with RLE, look at it one row at a time, from left to right. Count how many pixels of the same color sit next to each other, then write that count followed by the color. In the pixel image above, B is blue, Y is yellow, W is white, and G is green.</p>
+                To encode an image with RLE, look at it one row at a time, from left to right. Count how many pixels of
+                the same color sit next to each other, then write that count followed by the color. In the pixel image
+                above, B is blue, Y is yellow, W is white, and G is green.</p>
             <figure class="text-center">
-                <img class="img-fluid" src="assets/images/RLE%20Encoding%20of%20Pixel%20Image%20of%20a%20Sunny%20Landscape.png"
-                    alt="Table of the RLE encoding of each row of the sunny landscape, for example row 2 is 1B 2Y 3B 1W 1B" width="380"
-                    height="370" loading="lazy">
+                <img class="img-fluid"
+                    src="assets/images/RLE%20Encoding%20of%20Pixel%20Image%20of%20a%20Sunny%20Landscape.png"
+                    alt="Table of the RLE encoding of each row of the sunny landscape, for example row 2 is 1B 2Y 3B 1W 1B"
+                    width="380" height="370" loading="lazy">
                 <figcaption class="image-label">RLE Encoding of Pixel Image of a Sunny Landscape</figcaption>
             </figure>
             <p class="content-text">
-                Row 1 is all blue, so it becomes 8B. Row 2 goes 1 blue, 2 yellow, 3 blue, 1 white, and 1 blue, so it becomes 1B 2Y 3B 1W 1B. Rows 6 to 8 are all green, so each of them becomes 8G. Every time the color changes, a new run starts. Doing this for every row gives the encoded image above.</p>
+                Row 1 is all blue, so it becomes 8B. Row 2 goes 1 blue, 2 yellow, 3 blue, 1 white, and 1 blue, so it
+                becomes 1B 2Y 3B 1W 1B. Rows 6 to 8 are all green, so each of them becomes 8G. Every time the color
+                changes, a new run starts. Doing this for every row gives the encoded image above.</p>
             <p class="content-text">
-                The long runs shrink the most. The green rows describe 8 pixels with just 2 characters. Row 2 has five runs, so it needs 10 characters to describe 8 pixels, which is longer than the original row.</p>
+                The long runs shrink the most. The green rows describe 8 pixels with just 2 characters. Row 2 has five
+                runs, so it needs 10 characters to describe 8 pixels, which is longer than the original row.</p>
             <p class="content-text">
-                This is why RLE works best on data with long runs of the same value, such as simple images with large flat areas. When the data has few repeats, the encoded version can be longer than the original, just like ABC becoming 1A1B1C.</p>
+                This is why RLE works best on data with long runs of the same value, such as simple images with large
+                flat areas. When the data has few repeats, the encoded version can be longer than the original, just
+                like ABC becoming 1A1B1C.</p>
         </section>
 
 
         <!-- Link to the Technical Media Specs page (the table lives on specs.html) -->
-        <p class="text-center my-4"><a class="btn btn-outline-warning" href="specs.html">View Technical Media Specs</a></p>
+        <p class="text-center my-4"><a class="btn btn-outline-warning" href="specs.html">View Technical Media Specs</a>
+        </p>
     </main>
 
     <!-- FOOTER: same on every page -->
