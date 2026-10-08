@@ -278,6 +278,25 @@ h3 {
     }
 }
 
+/* Raster vs. Vector table: both example images get the same box, so they line up side by side.
+   The photo and the SVG each shrink to fit inside it (object-fit / viewBox keep their proportions) */
+.comparison-table img,
+.comparison-table .vector-sample {
+    display: block;
+    width: 100%;
+    height: 12rem;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+/* Phones: a shorter box so the two examples fit in the narrow columns */
+@media (max-width: 480px) {
+    .comparison-table img,
+    .comparison-table .vector-sample {
+        height: 7rem;
+    }
+}
+
 /* Raster vs. Vector table: the first column holds the topic titles */
 .comparison-table th[scope="row"] {
     vertical-align: middle;
