@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Compression - Graphics and Compression Learning Site</title>
+
+    <!-- Link order: Bootstrap CSS first, then the font, then style.css LAST -->
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- NAVBAR: same on every page. Bootstrap collapses it on small screens. -->
+    <header>
+        <nav class="navbar navbar-expand-md site-nav">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Graphics &amp; Compression</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu"
+                    aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="nav-menu">
+                    <ul class="navbar-nav ms-auto">
+                        <!-- The link for the current page has class "active" -->
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="graphics.html">Graphics</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page"
+                                href="compression.html">Compression</a></li>
+                        <li class="nav-item"><a class="nav-link" href="specs.html">Specs</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTAINER: centered box that holds the page content -->
+    <main class="main-container container">
+        <h1 class="page-title">Compression</h1>
+
+        <!-- Image of how compression looks -->
+        <figure class="text-center">
+            <img class="img-fluid" src="assets/images/Compression%20Visualization.png" alt="Diagram visualizing how compression works" width="620"
+                height="322">
+            <figcaption class="image-label">
+                Image of a Compression Visualization
+            </figcaption>
+        </figure>
+
+        <section>
+            <h2 class="section-title">What is Compression?</h2>
+            <p class="content-text">
+                Compression is the process of reducing the size of a file or a group of files to take up less storage space. It uses algorithms to encode them more efficiently and smaller while not losing their essential content. Through compression, it makes sharing files, especially large ones, easier.</p>
+            <p class="content-text">
+                Some common compression formats include .zip, .rar, and .jpeg.</p>
+            <p class="content-text">
+                While compression can make files smaller, compressing it too much can cause the file quality, especially audio, to lessen.
+            </p>
+        </section>
+
+
+        <!-- COMPRESSION SAMPLE: 2 audio files and 1 zip, sizes shown in the table -->
+        <section>
+            <h2 class="section-title">Sample Compression</h2>
+            <p class="content-text">
+                Here are 3 sample audio files. The first is an uncompressed .wav file, the second is a compressed .mp3 file, and the third is a super compressed .mp3 file. Try playing and downloading them. Notice how their file sizes and audio quality are different.</p>
+            <p class="content-text">
+                Try also downloading the .zip file that contains the 3 sample audio files. Notice how the zip file is smaller than the 3 audio files combined.
+            </p>
+            <div class="table-responsive">
+                <table class="table audio-table text-center align-middle">
+                    <caption class="visually-hidden">Audio samples and zip download with file sizes</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">File</th>
+                            <th scope="col">Play / Download</th>
+                            <th scope="col">Size</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Audio 1: Uncompressed (.wav)</th>
+                            <td>
+                                <audio controls preload="metadata">
+                                    <source src="assets/audio/Uncompressed%20Jazz.wav" type="audio/wav">
+                                    Your browser does not support the audio element.
+                                </audio>
+                                <p><a href="assets/audio/Uncompressed%20Jazz.wav" download>Download Audio 1</a></p>
+                            </td>
+                            <td>5.49 MB</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Audio 2: Compressed (.mp3)</th>
+                            <td>
+                                <audio controls preload="metadata">
+                                    <source src="assets/audio/Compressed%20Jazz.mp3" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                                <p><a href="assets/audio/Compressed%20Jazz.mp3" download>Download Audio 2</a></p>
+                            </td>
+                            <td>235.2 KB</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Audio 3: Super Compressed (.mp3)</th>
+                            <td>
+                                <audio controls preload="metadata">
+                                    <source src="assets/audio/Super%20Compressed%20Jazz.mp3" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                                <p><a href="assets/audio/Super%20Compressed%20Jazz.mp3" download>Download Audio 3</a></p>
+                            </td>
+                            <td>59.2 KB</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Zip of Audio 1, 2 and 3</th>
+                            <td><a href="assets/audio/Zip%20Folder%20of%20Audio%20Samples.zip" download>Download Zip</a></td>
+                            <td>5.43 MB (the 3 files separately: 5.78 MB)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- RLE section: what it is, then a walkthrough using the pixel image -->
+        <section>
+            <h2 class="section-title">RLE Algorithm</h2>
+            <h3 class="section-subtitle">What is RLE?</h3>
+            <p class="content-text">
+                Run Length Encoding, or RLE, is a type of compression algorithm. It is usually used for storing data with long sequences of repeated characters.</p>
+
+            <h3 class="section-subtitle">How to do RLE?</h3>
+            <figure class="text-center">
+                <img class="img-fluid" src="assets/images/Pixel%20Image%20of%20a%20Sunny%20Landscape.png"
+                    alt="Pixel image of a sunny landscape: an 8 by 8 grid with a blue sky, a yellow sun, white clouds, and green grass" width="507"
+                    height="527" loading="lazy">
+                <figcaption class="image-label">Pixel Image of a Sunny Landscape</figcaption>
+            </figure>
+            <p class="content-text">
+                To encode an image with RLE, look at it one row at a time, from left to right. Count how many pixels of the same color sit next to each other, then write that count followed by the color. In the pixel image above, B is blue, Y is yellow, W is white, and G is green.</p>
+            <figure class="text-center">
+                <img class="img-fluid" src="assets/images/RLE%20Encoding%20of%20Pixel%20Image%20of%20a%20Sunny%20Landscape.png"
+                    alt="Table of the RLE encoding of each row of the sunny landscape, for example row 2 is 1B 2Y 3B 1W 1B" width="380"
+                    height="370" loading="lazy">
+                <figcaption class="image-label">RLE Encoding of Pixel Image of a Sunny Landscape</figcaption>
+            </figure>
+            <p class="content-text">
+                Row 1 is all blue, so it becomes 8B. Row 2 goes 1 blue, 2 yellow, 3 blue, 1 white, and 1 blue, so it becomes 1B 2Y 3B 1W 1B. Rows 6 to 8 are all green, so each of them becomes 8G. Every time the color changes, a new run starts. Doing this for every row gives the encoded image above.</p>
+            <p class="content-text">
+                The long runs shrink the most. The green rows describe 8 pixels with just 2 characters. Row 2 has five runs, so it needs 10 characters to describe 8 pixels, which is longer than the original row.</p>
+            <p class="content-text">
+                This is why RLE works best on data with long runs of the same value, such as simple images with large flat areas. When the data has few repeats, the encoded version can be longer than the original, just like ABC becoming 1A1B1C.</p>
+        </section>
+
+
+        <!-- Link to the Technical Media Specs page (the table lives on specs.html) -->
+        <p class="text-center my-4"><a class="btn btn-outline-warning" href="specs.html">View Technical Media Specs</a></p>
+    </main>
+
+    <!-- FOOTER: same on every page -->
+    <footer class="site-footer text-center">
+        <p>Copyright Emmanuel II Velasco 2026</p>
+    </footer>
+
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

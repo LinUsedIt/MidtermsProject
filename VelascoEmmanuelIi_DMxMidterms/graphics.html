@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Graphics - Graphics and Compression Learning Site</title>
+
+    <!-- Link order: Bootstrap CSS first, then the font, then style.css LAST -->
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- NAVBAR: same on every page. Bootstrap collapses it on small screens. -->
+    <header>
+        <nav class="navbar navbar-expand-md site-nav">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Graphics &amp; Compression</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu"
+                    aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="nav-menu">
+                    <ul class="navbar-nav ms-auto">
+                        <!-- The link for the current page has class "active" -->
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page"
+                                href="graphics.html">Graphics</a></li>
+                        <li class="nav-item"><a class="nav-link" href="compression.html">Compression</a></li>
+                        <li class="nav-item"><a class="nav-link" href="specs.html">Specs</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTAINER: centered box that holds the page content -->
+    <main class="main-container container">
+        <h1 class="page-title">Graphics</h1>
+
+        <!-- Sample graphics image -->
+        <figure class="text-center">
+            <img class="img-fluid" src="assets/images/Butterfly.jpg" alt="Photo of a butterfly" width="1600"
+                height="1386">
+            <figcaption class="image-label">
+                Raster Image of a Butterfly
+            </figcaption>
+        </figure>
+
+        <!-- Quick introduction on graphics -->
+        <section>
+            <h2 class="section-title">What are Graphics?</h2>
+            <p class="content-text">
+                Graphics are visual images or designs that can be displayed on a screen or be printed. They are used to communicate ideas or enhance various forms of media. These play a role in UIs, digital art, web designs, and many more.</p>
+            <p class="content-text">
+                There are many types of graphics. For 2D Graphics, Raster and Vector are its main types.
+            </p>
+        </section>
+
+        <!-- RASTER section -->
+        <section>
+            <h2 class="section-title">Raster Graphics</h2>
+            <figure class="text-center">
+                <img class="img-fluid" src="assets/images/macaw.jpg" alt="Raster image of a macaw" width="1068"
+                    height="1600" loading="lazy">
+                <figcaption class="image-label">
+                    Raster Image of a Macaw
+                </figcaption>
+            </figure>
+            <h3 class="section-subtitle">What are Raster Graphics?</h3>
+            <p class="content-text">
+                Raster graphics are also known as "bitmap graphics." As the name suggests, they use a grid of pixels, each containing color information, to form an image. The higher the resolution of the image, the more pixels there are.</p>
+            <p class="content-text">
+                Raster graphics can display a wide range of colors, making them ideal for digital photographs. This also causes them to have large file sizes, but they make up for it with easier sharing and display. Unfortunately, resizing a raster graphic will lose image quality.</p>
+            <p class="content-text">
+                Common file types include .jpg and .png.
+            </p>
+        </section>
+
+        <!-- VECTOR section (the camera is an inline SVG, a cleaned copy of assets/images/camera.svg) -->
+        <section>
+            <h2 class="section-title">Vector Graphics</h2>
+            <figure class="text-center" id="vector-figure">
+                <svg class="vector-sample" viewBox="0 0 512 512" role="img" aria-label="Vector image of a camera"
+                    xmlns="http://www.w3.org/2000/svg">
+                <path style="fill:#F1F2F2;" d="M446.512,512H65.488C29.378,512,0,482.622,0,446.512v-273.86c0-9.864,7.997-17.86,17.86-17.86H494.14 c9.864,0,17.86,7.997,17.86,17.86v273.86C512,482.622,482.622,512,446.512,512z"/>
+                <path style="fill:#BCBEC0;" d="M494.14,154.791H256V512h190.512c36.11,0,65.488-29.378,65.488-65.488v-273.86 C512,162.787,504.003,154.791,494.14,154.791z"/>
+                <path style="fill:#FFCE3E;" d="M512,190.512H0V65.488C0,29.32,29.32,0,65.488,0h381.023C482.68,0,512,29.32,512,65.488V190.512z"/>
+                <g> <path style="fill:#F59D00;" d="M512,65.488C512,29.32,482.68,0,446.512,0H256v190.512h256V65.488z"/> <rect x="92.374" style="fill:#F59D00;" width="35.721" height="190.512"/> <rect x="154.791" style="fill:#F59D00;" width="35.721" height="190.512"/>
+                </g>
+                <path style="fill:#BCBEC0;" d="M256,392.93c-75.503,0-136.93-61.427-136.93-136.93S180.497,119.07,256,119.07 S392.93,180.497,392.93,256S331.503,392.93,256,392.93z"/>
+                <path style="fill:#808285;" d="M256,119.07v273.86c75.503,0,136.93-61.427,136.93-136.93S331.503,119.07,256,119.07z"/>
+                <path style="fill:#FEE856;" d="M256,333.395c-42.676,0-77.395-34.72-77.395-77.395s34.72-77.395,77.395-77.395 s77.395,34.72,77.395,77.395S298.676,333.395,256,333.395z"/>
+                <g> <path style="fill:#FFCE3E;" d="M428.651,146.607h-47.628c-9.864,0-17.86-7.997-17.86-17.86V81.119c0-9.864,7.997-17.86,17.86-17.86 h47.628c9.864,0,17.86,7.997,17.86,17.86v47.628C446.512,138.61,438.515,146.607,428.651,146.607z"/> <path style="fill:#FFCE3E;" d="M256,178.605v154.791c42.676,0,77.395-34.72,77.395-77.395S298.676,178.605,256,178.605z"/>
+                </g>
+            </svg>
+                <figcaption class="image-label">
+                    Vector Image of a Camera
+                </figcaption>
+            </figure>
+            <h3 class="section-subtitle">What are Vector Graphics?</h3>
+            <p class="content-text">
+                Unlike raster graphics, vector graphics use mathematical equations to define the lines, shapes, and colors of an image.</p>
+            <p class="content-text">
+                Vector graphics are predominantly used for digital illustrations and logo designs due to their capability of maintaining their resolution regardless of image size. However, they cannot render complex image details such as textures and shading that digital photographs have. As such, vector graphics tend to have small file sizes.</p>
+            <p class="content-text">
+                Common file types include .svg and .eps.
+            </p>
+        </section>
+
+        <!-- RASTER VS VECTOR comparison table -->
+        <section>
+            <h2 class="section-title">Raster vs. Vector</h2>
+            <div class="table-responsive">
+                <table class="table comparison-table text-center">
+                    <caption class="visually-hidden">Comparison of raster and vector graphics</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col"><span class="visually-hidden">Topic</span></th>
+                            <th scope="col">Raster</th>
+                            <th scope="col">Vector</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Example</th>
+                            <td>
+                                <img class="img-fluid" src="assets/images/macaw.jpg" alt="Raster example: a macaw"
+                                    width="1068" height="1600" loading="lazy">
+                                <p class="image-label">
+                                    Raster Image of a Macaw
+                                </p>
+                            </td>
+                            <td>
+                                <svg class="vector-sample" viewBox="0 0 512 512" role="img" aria-label="Vector example: a camera"
+                    xmlns="http://www.w3.org/2000/svg">
+                <path style="fill:#F1F2F2;" d="M446.512,512H65.488C29.378,512,0,482.622,0,446.512v-273.86c0-9.864,7.997-17.86,17.86-17.86H494.14 c9.864,0,17.86,7.997,17.86,17.86v273.86C512,482.622,482.622,512,446.512,512z"/>
+                <path style="fill:#BCBEC0;" d="M494.14,154.791H256V512h190.512c36.11,0,65.488-29.378,65.488-65.488v-273.86 C512,162.787,504.003,154.791,494.14,154.791z"/>
+                <path style="fill:#FFCE3E;" d="M512,190.512H0V65.488C0,29.32,29.32,0,65.488,0h381.023C482.68,0,512,29.32,512,65.488V190.512z"/>
+                <g> <path style="fill:#F59D00;" d="M512,65.488C512,29.32,482.68,0,446.512,0H256v190.512h256V65.488z"/> <rect x="92.374" style="fill:#F59D00;" width="35.721" height="190.512"/> <rect x="154.791" style="fill:#F59D00;" width="35.721" height="190.512"/>
+                </g>
+                <path style="fill:#BCBEC0;" d="M256,392.93c-75.503,0-136.93-61.427-136.93-136.93S180.497,119.07,256,119.07 S392.93,180.497,392.93,256S331.503,392.93,256,392.93z"/>
+                <path style="fill:#808285;" d="M256,119.07v273.86c75.503,0,136.93-61.427,136.93-136.93S331.503,119.07,256,119.07z"/>
+                <path style="fill:#FEE856;" d="M256,333.395c-42.676,0-77.395-34.72-77.395-77.395s34.72-77.395,77.395-77.395 s77.395,34.72,77.395,77.395S298.676,333.395,256,333.395z"/>
+                <g> <path style="fill:#FFCE3E;" d="M428.651,146.607h-47.628c-9.864,0-17.86-7.997-17.86-17.86V81.119c0-9.864,7.997-17.86,17.86-17.86 h47.628c9.864,0,17.86,7.997,17.86,17.86v47.628C446.512,138.61,438.515,146.607,428.651,146.607z"/> <path style="fill:#FFCE3E;" d="M256,178.605v154.791c42.676,0,77.395-34.72,77.395-77.395S298.676,178.605,256,178.605z"/>
+                </g>
+            </svg>
+                                <p class="image-label">
+                                    Vector Image of a Camera
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Built from</th>
+                            <td>
+                                <p class="content-text">Made of a grid of pixels, each containing color information.</p>
+                            </td>
+                            <td>
+                                <p class="content-text">Made of mathematical equations that define lines, shapes, and colors.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Best used for</th>
+                            <td>
+                                <p class="content-text">Digital photographs, because it can display a wide range of colors.</p>
+                            </td>
+                            <td>
+                                <p class="content-text">Digital illustrations and logos. It cannot render textures and shading like a photograph.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Resizing and file size</th>
+                            <td>
+                                <p class="content-text">Loses image quality when resized, and tends to have large file sizes.</p>
+                            </td>
+                            <td>
+                                <p class="content-text">Keeps its resolution at any size, and tends to have small file sizes.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ZOOM WIDGET: one slider zooms the raster image and the vector image together (see script.js) -->
+        <section id="zoom-widget">
+            <h2 class="section-title">Zoom Comparison</h2>
+            <p class="content-text">
+                Here are two similar images but both are saved differently. One is raster and the other is vector. Using the zoom slider, you can see the resolution difference between the two graphic types.</p>
+            <p class="content-text">
+                Do you notice the pixels of the raster image while the vector image has none?
+            </p>
+
+            <!-- The slider and its label. aria-live announces the new zoom value. -->
+            <div class="zoom-controls">
+                <label for="zoom-slider" class="image-label">Zoom: <span id="zoom-value"
+                        aria-live="polite">1x</span></label>
+                <input type="range" class="form-range" id="zoom-slider" min="1" max="20" step="0.5" value="1">
+            </div>
+
+            <!-- Two windows side by side. Each window hides whatever zooms outside of it. -->
+            <div class="row g-3 text-center">
+                <div class="col-6">
+                    <div class="zoom-window">
+                        <img id="zoom-raster" class="zoom-raster" src="assets/images/Ghost.png"
+                            alt="Raster sample of a ghost, zoomed by the slider" width="794" height="1123">
+                    </div>
+                    <p class="image-label">Raster Image of a Ghost</p>
+                </div>
+                <div class="col-6">
+                    <div class="zoom-window">
+                        <img id="zoom-vector" class="zoom-vector" src="assets/images/Ghost.svg"
+                            alt="Vector sample of a ghost, zoomed by the slider">
+                    </div>
+                    <p class="image-label">Vector Image of a Ghost</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Link to the Technical Media Specs page (the table lives on specs.html) -->
+        <p class="text-center my-4"><a class="btn btn-outline-warning" href="specs.html">View Technical Media Specs</a></p>
+    </main>
+
+    <!-- FOOTER: same on every page -->
+    <footer class="site-footer text-center">
+        <p>Copyright Emmanuel II Velasco 2026</p>
+    </footer>
+
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Our own script: runs the zoom slider -->
+    <script src="script.js" defer></script>
+</body>
+
+</html>
